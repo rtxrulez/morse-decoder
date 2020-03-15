@@ -43,7 +43,7 @@ String.prototype.split = function(separator, limit, chunksize) {
   if (chunksize === undefined || chunksize === 1)
     return this.splitNative(separator, limit);
 
-  // кастомное разбиение тут
+  // кастомное разбиение тут и прибавляется каждые 2 или 5 строки в новый массив.
   let result = [];
   for (let i = 0; i < this.length; i += chunksize) {
     result.push(this.substr(i, chunksize));
@@ -89,7 +89,6 @@ function decode(expr) {
   return str;
 }
 
-// console.log("d", decode(expr));
 module.exports = {
   decode
 };
